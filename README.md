@@ -1,15 +1,20 @@
-*Psst — looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
 
----
+# Base template for svelte app
 
-# svelte app
+This is my version of a base template for getting started with creating an [Svelte](https://svelte.dev) app.
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
+This repo takes [sveltejs/template](https://github.com/sveltejs/template) as a base and it was modified to support the following:
+- Sass preprocessing (without linting / error checking);
+- ESLint for svelte3
+- ESLint - VSCode integration
+- Absolute paths (relative to `/src`)
 
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
+if you are looking for the base svelte template. Head towards [the sveltejs/template repo](https://github.com/sveltejs/template)
+
+To make a quick scaffolding of this repo you can use [degit](https://github.com/Rich-Harris/degit)
 
 ```bash
-npx degit sveltejs/template svelte-app
+npx degit antonyacosta78/svelte-template svelte-app
 cd svelte-app
 ```
 
@@ -18,65 +23,22 @@ cd svelte-app
 
 ## Get started
 
-Install the dependencies...
+To get your dev server started just follow two steps
+- install the dependencies
+  ```bash
+  cd svelte-app
+  yarn install
+  ```
 
-```bash
-cd svelte-app
-npm install
-```
+- start rollup dev server
+  ```bash
+  yarn dev
+  ```
 
-...then start [Rollup](https://rollupjs.org):
-
-```bash
-npm run dev
-```
-
-Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
-
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
+Navigate to [localhost:10001](http://localhost:10001). You should see your app running. Every change made in any file of the `src` folder will automatically trigger a reload of the page. 
+For more info on how to configure the serve of the project, visit [rollup-plugin-serve](https://github.com/thgh/rollup-plugin-serve)
 
 
-## Building and running in production mode
+## Next steps
 
-To create an optimised version of the app:
-
-```bash
-npm run build
-```
-
-You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
-
-
-## Deploying to the web
-
-### With [now](https://zeit.co/now)
-
-Install `now` if you haven't already:
-
-```bash
-npm install -g now
-```
-
-Then, from within your project folder:
-
-```bash
-cd public
-now deploy --name my-project
-```
-
-As an alternative, use the [Now desktop client](https://zeit.co/download) and simply drag the unzipped project folder to the taskbar icon.
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public my-project.surge.sh
-```
+Please note that this repo is just a modified version of [the sveltejs/template repo](https://github.com/sveltejs/) to support sass and to be served with [rollup-plugin-serve](https://github.com/thgh/rollup-plugin-serve). All the info that this readme is lacking is available there 
