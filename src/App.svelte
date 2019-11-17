@@ -1,9 +1,9 @@
 <script>
-	let name = "Antony";
+	export let name;
 </script>
 
 <main>
-	<h1>Hello {name} COMO TAS</h1>
+	<h1>Hello {name}</h1>
 </main>
 
 <style type="text/scss">
@@ -19,9 +19,6 @@
 		  font-weight: 100;
 	  }
 	}
-
-
-
 
 	@media (min-width: 640px) {
 		main {
