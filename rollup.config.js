@@ -3,7 +3,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import serve from 'rollup-plugin-serve';
-import includePaths from 'rollup-plugin-includepaths';
+import alias from '@rollup/plugin-alias';
 import autoPreprocess from 'svelte-preprocess';
 import { terser } from 'rollup-plugin-terser';
 
@@ -20,12 +20,11 @@ export default {
 		file: buildDir + '/build/bundle.js'
 	},
 	plugins: [
-    includePaths({
-      include: {},
-      paths: ['src'],
-      external: [],
-      extensions: ['.js', '.json', '.html', '.svelte']
-  }),
+    alias({
+     entries:{
+       "@app": "src/"
+     }
+    }),
 		svelte({
 			// enable run-time checks when not in production
 			dev: !production,
